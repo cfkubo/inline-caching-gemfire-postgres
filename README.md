@@ -51,12 +51,14 @@ The corresponding Java model is `com.example.model.DataItem`.
 
 ### Prerequisites
 
-- Java 11 or higher
+- Java 21
 - Maven
 - PostgreSQL (with a `data_item` table and sample data)
-- Apache Geode (GemFire)
+- Gemfire
 
 ### Installation
+
+### Postgres setup
 
 ```
 CREATE TABLE data_item (
