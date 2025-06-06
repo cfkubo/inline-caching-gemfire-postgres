@@ -141,12 +141,14 @@ FROM generate_series(1, 1000) as gs(i);
 
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/inline-caching-gemfire.git
    cd inline-caching-gemfire
    ```
 
 2. Build the project using Maven:
+
    ```
    mvn clean install
    ```
