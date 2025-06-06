@@ -238,10 +238,14 @@ This project implements a cache-aside pattern, which is a common strategy for in
 
 - Cache Lookup: The application's service layer first checks if the DataItem with the requested id is present in the dataItemRegion in GemFire.
 
-Cache Hit: If the item is found in GemFire (a "cache hit"), it's immediately returned to the client. This is extremely fast!
-Cache Miss: If the item is not found in GemFire (a "cache miss"), the application then queries PostgreSQL to fetch the DataItem.
-Cache Population: Once the DataItem is retrieved from PostgreSQL, it's immediately stored in the dataItemRegion in GemFire.
-Return Data: The DataItem is then returned to the client. Subsequent requests for the same id will now result in a cache hit.
+- Cache Hit: If the item is found in GemFire (a "cache hit"), it's immediately returned to the client. This is extremely fast!
+
+- Cache Miss: If the item is not found in GemFire (a "cache miss"), the application then queries PostgreSQL to fetch the DataItem.
+
+- Cache Population: Once the DataItem is retrieved from PostgreSQL, it's immediately stored in the dataItemRegion in GemFire.
+
+- Return Data: The DataItem is then returned to the client. Subsequent requests for the same id will now result in a cache hit.
+
 This intelligent flow ensures that your database is only queried when necessary, reducing load and improving responsiveness.
 
 
