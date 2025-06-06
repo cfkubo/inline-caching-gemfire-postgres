@@ -231,6 +231,20 @@ FROM generate_series(1, 1000) as gs(i);
 
 ...
 
+### 💡 How Inline Caching Works in this Project
+This project implements a cache-aside pattern, which is a common strategy for inline caching.
+
+- Client Request: A request comes into the Spring Boot application (e.g., GET /data/{id}).
+
+- Cache Lookup: The application's service layer first checks if the DataItem with the requested id is present in the dataItemRegion in GemFire.
+
+Cache Hit: If the item is found in GemFire (a "cache hit"), it's immediately returned to the client. This is extremely fast!
+Cache Miss: If the item is not found in GemFire (a "cache miss"), the application then queries PostgreSQL to fetch the DataItem.
+Cache Population: Once the DataItem is retrieved from PostgreSQL, it's immediately stored in the dataItemRegion in GemFire.
+Return Data: The DataItem is then returned to the client. Subsequent requests for the same id will now result in a cache hit.
+This intelligent flow ensures that your database is only queried when necessary, reducing load and improving responsiveness.
+
+
 ### GemFire Setup Notes
 
 - Ensure GemFire server is running and the `dataItemRegion` region is created before starting the Spring Boot app.
