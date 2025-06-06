@@ -54,7 +54,7 @@ The corresponding Java model is `com.example.model.DataItem`.
 - Java 21
 - Maven
 - PostgreSQL (with a `data_item` table and sample data)
-- Gemfire
+- Gemfire up and running [https://gemfire.dev/quickstart/docker](https://gemfire.dev/quickstart/docker)
 
 
 Add Spring Boot for VMware GemFire to a Project
@@ -164,12 +164,8 @@ FROM generate_series(1, 1000) as gs(i);
 4. **Start the GemFire server and create the region:**
 
    - Start a GemFire locator and server:
-   
-     ```
-     gfsh
-     start locator --name=locator1
-     start server --name=server1
-     ```
+
+   - gemfire up and running [https://gemfire.dev/quickstart/docker](https://gemfire.dev/quickstart/docker)
 
    - Create the region for caching:
      ```
