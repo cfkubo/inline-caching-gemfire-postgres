@@ -154,6 +154,7 @@ FROM generate_series(1, 1000) as gs(i);
    ```
 
 3. Configure your database connection in `src/main/resources/application.properties`:
+
    ```
    spring.datasource.url=jdbc:postgresql://localhost:5432/yourdb
    spring.datasource.username=youruser
