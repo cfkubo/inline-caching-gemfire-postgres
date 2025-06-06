@@ -164,6 +164,7 @@ FROM generate_series(1, 1000) as gs(i);
 4. **Start the GemFire server and create the region:**
 
    - Start a GemFire locator and server:
+   
      ```
      gfsh
      start locator --name=locator1
