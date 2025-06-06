@@ -99,7 +99,13 @@ Maven: Add the following to the **.m2/settings.xml** file. Replace MY-USERNAME@e
 
 ### Installation
 
-### Postgres setup
+#### Postgres setup
+
+```
+docker run  -d --name postgres -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres debezium/example-postgres:2.3.3.Final
+```
+
+#### Create table and Sample Data
 
 ```
 CREATE TABLE data_item (
