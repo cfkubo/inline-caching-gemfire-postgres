@@ -61,3 +61,5 @@ server*.dat
 *.bak
 *.swp
 *.swo
+
+frontend/
