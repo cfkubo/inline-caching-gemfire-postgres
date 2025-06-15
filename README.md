@@ -229,7 +229,15 @@ FROM generate_series(1, 1000) as gs(i);
 
    - You can observe the difference in SQL logs between the first and subsequent requests.
 
-...
+
+
+```
+http://localhost:9989/
+```
+
+```
+http://localhost:9989/products
+```
 
 ### 💡 How Inline Caching Works in this Project
 This project implements a cache-aside pattern, which is a common strategy for inline caching.
