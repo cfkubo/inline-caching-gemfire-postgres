@@ -88,11 +88,6 @@
     <version>24.4.4</version>
 </dependency>
 
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-spring-boot-starter</artifactId>
-    <version>24.4.4</version>
-</dependency>
 
 
     </dependencies>
