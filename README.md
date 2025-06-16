@@ -239,6 +239,12 @@ http://localhost:9989/
 http://localhost:9989/products
 ```
 
+
+```
+gfsh>configure pdx --read-serialized=true
+```
+
+
 ```
 destroy region --name=productsRegion
 ```
