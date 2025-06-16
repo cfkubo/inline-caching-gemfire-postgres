@@ -64,4 +64,4 @@ server*.dat
 
 frontend/
 
-cookies.txt
+cookies*.txt
