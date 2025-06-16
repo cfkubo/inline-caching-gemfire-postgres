@@ -253,6 +253,9 @@ destroy region --name=productsRegion
 create region --name=productsRegion --type=PARTITION
 ```
 
+```
+ordersRegion
+```
 
 ```
 % jar tf /Users/avannala/Documents/workspace/inline-caching-gemfire/target/inline-caching-gemfire-1.0-SNAPSHOT.jar | grep Product
@@ -271,6 +274,16 @@ Successfully copied 27.1kB to d90c43c7f804:/inline-caching-gemfire-1.0-SNAPSHOT.
 
 ```
 gfsh>deploy --jar=/inline-caching-gemfire-1.0-SNAPSHOT.jar
+
+Deploying files: inline-caching-gemfire-1.0-SNAPSHOT.jar
+Total file size is: 0.04MB
+
+Continue?  (Y/n): y
+ Member  |                   JAR                   | JAR Location
+-------- | --------------------------------------- | ---------------------------------------------------------------------
+server-0 | inline-caching-gemfire-1.0-SNAPSHOT.jar | /data/deployments/inline-caching-gemfire/main/lib/inline-caching-ge..
+
+gfsh>
 
 ```
 
