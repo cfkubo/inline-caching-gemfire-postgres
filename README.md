@@ -239,6 +239,14 @@ http://localhost:9989/
 http://localhost:9989/products
 ```
 
+```
+destroy region --name=productsRegion
+```
+
+```
+create region --name=productsRegion --type=PARTITION
+```
+
 ### 💡 How Inline Caching Works in this Project
 This project implements a cache-aside pattern, which is a common strategy for inline caching.
 
@@ -266,3 +274,4 @@ This intelligent flow ensures that your database is only queried when necessary,
 ## Conclusion
 
 This project serves as a practical example of how to implement inline caching with GemFire in a Spring Boot application. By caching frequently accessed data, you can significantly enhance the performance and scalability of your applications. Experiment with different data and observe the reduction in database queries thanks to GemFire's inline cache!# inline-caching-gemfire-postgres
+# gemfire-spring-shopping-sample
