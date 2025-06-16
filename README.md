@@ -247,6 +247,27 @@ destroy region --name=productsRegion
 create region --name=productsRegion --type=PARTITION
 ```
 
+
+```
+% jar tf /Users/avannala/Documents/workspace/inline-caching-gemfire/target/inline-caching-gemfire-1.0-SNAPSHOT.jar | grep Product
+com/example/ui/ProductView.class
+com/example/repository/ProductRepository.class
+com/example/model/ProductFetchResult.class
+com/example/model/Product.class
+com/example/service/ProductService.class
+```
+
+```
+% docker cp /Users/avannala/Documents/workspace/inline-caching-gemfire/target/inline-caching-gemfire-1.0-SNAPSHOT.jar d90c43c7f804:/inline-caching-gemfire-1.0-SNAPSHOT.jar
+Successfully copied 27.1kB to d90c43c7f804:/inline-caching-gemfire-1.0-SNAPSHOT.jar
+
+```
+
+```
+gfsh>deploy --jar=/inline-caching-gemfire-1.0-SNAPSHOT.jar
+
+```
+
 ### 💡 How Inline Caching Works in this Project
 This project implements a cache-aside pattern, which is a common strategy for inline caching.
 
