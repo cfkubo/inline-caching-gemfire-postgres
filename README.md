@@ -287,6 +287,25 @@ gfsh>
 
 ```
 
+
+
+```
+# Add to cart and save cookies
+curl -c cookies.txt -X POST "http://localhost:9989/api/cart/add/10097"
+
+# View cart using the same cookies (same session)
+curl -b cookies.txt "http://localhost:9989/api/cart"
+
+
+curl -b cookies.txt -X DELETE "http://localhost:9989/api/cart/remove/10097"
+
+
+curl -b cookies.txt  -X POST "http://localhost:9989/api/checkout" \
+  -d "name=John Doe" \
+  -d "shippingAddress=123 Main St" \
+  -d "billingAddress=456 Elm St"
+```
+
 ### 💡 How Inline Caching Works in this Project
 This project implements a cache-aside pattern, which is a common strategy for inline caching.
 

@@ -30,6 +30,7 @@
 package com.example.config;
 
 import com.example.model.DataItem;
+import com.example.model.Order;
 import com.example.model.Product;
 import org.apache.geode.cache.client.ClientCache;
 import org.apache.geode.cache.client.ClientCacheFactory;
@@ -51,6 +52,12 @@ public class GemFireConfig {
 
     @Value("${spring.data.gemfire.locator.port:10334}")
     private int locatorPort;
+
+    @Bean
+    public Region<Long, Order> ordersRegion(ClientCache clientCache) {
+        ClientRegionFactory<Long, Order> regionFactory = clientCache.createClientRegionFactory(ClientRegionShortcut.PROXY);
+        return regionFactory.create("ordersRegion");
+    }
 
     @Bean
     public ClientCache clientCache() {
