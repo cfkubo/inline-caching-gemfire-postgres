@@ -239,6 +239,14 @@ http://localhost:9989/
 http://localhost:9989/products
 ```
 
+```
+destroy region --name=productsRegion
+```
+
+```
+create region --name=productsRegion --type=PARTITION
+```
+
 ### 💡 How Inline Caching Works in this Project
 This project implements a cache-aside pattern, which is a common strategy for inline caching.
 
